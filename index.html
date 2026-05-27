@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Contratações Sustentáveis</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonte Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        eco: {
+                            50: '#f2fbf5', 100: '#e0f6e9', 200: '#c2ebd3', 300: '#94dbb4', 
+                            400: '#5fc390', 500: '#38a773', 600: '#278558', 700: '#236a48', 
+                            800: '#1e543b', 900: '#194532'
+                        },
+                        papel: '#fdfbf7'
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fdfbf7; }
+        
+        .bg-organic {
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(255,255,255,0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255,255,255,0.06) 0%, transparent 20%);
+        }
+
+        .hub-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hub-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(39, 133, 88, 0.1), 0 10px 10px -5px rgba(39, 133, 88, 0.04);
+            border-color: #94dbb4;
+        }
+        .hub-card:hover .icon-wrapper {
+            background-color: #38a773;
+            color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- CABEÇALHO DO HUB -->
+    <header class="bg-gradient-to-br from-eco-900 via-eco-700 to-eco-500 text-white pt-16 pb-24 px-6 relative overflow-hidden bg-organic shadow-md">
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
+            
+            <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 text-eco-50 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-md border border-white/20 shadow-sm animate-slide-up" style="animation-delay: 0.1s; opacity: 0;">
+                <i class="fas fa-globe-americas text-eco-200"></i> Sistema Integrado
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-sm animate-slide-up" style="animation-delay: 0.2s; opacity: 0;">
+                Portal de Contratações<br>Sustentáveis
+            </h1>
+            
+            <p class="text-eco-50 text-lg sm:text-xl font-light max-w-2xl leading-relaxed opacity-90 animate-slide-up" style="animation-delay: 0.3s; opacity: 0;">
+                Central de ferramentas para o planejamento de compras verdes, inclusivas e eficientes no serviço público.
+            </p>
+        </div>
+        
+        <!-- Curva Decorativa na base do cabeçalho -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none" style="transform: translateY(1px);">
+            <svg class="relative block w-full h-[50px] sm:h-[80px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.32,201.39,112.5Z" fill="#fdfbf7"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ÁREA DE MENU (CARDS) -->
+    <main class="flex-grow flex items-start max-w-5xl mx-auto w-full px-6 -mt-10 sm:-mt-8 relative z-20 pb-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full">
+            
+            <!-- CARD 1: GUIAS CADASTRADOS -->
+            <a href="acesso.html" class="hub-card bg-white rounded-3xl p-8 sm:p-10 border-2 border-eco-50 flex flex-col items-center text-center animate-slide-up" style="animation-delay: 0.4s; opacity: 0;">
+                <div class="icon-wrapper w-24 h-24 rounded-full bg-eco-50 flex items-center justify-center text-eco-600 text-4xl mb-6 transition-all duration-300 shadow-inner">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Guias Cadastrados</h2>
+                <p class="text-gray-500 mb-8 leading-relaxed">
+                    Acesse o módulo de consulta para pesquisar objetos de contratação, extrair diretrizes e gerar o Estudo Técnico (ETP) e Termo de Referência (TR).
+                </p>
+                <div class="mt-auto">
+                    <span class="inline-flex items-center gap-2 font-bold text-eco-600 uppercase tracking-wider text-sm group-hover:text-eco-700">
+                        Acessar Guias <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CARD 2: GERENCIAR E CADASTRAR -->
+            <a href="cadastro.html" class="hub-card bg-white rounded-3xl p-8 sm:p-10 border-2 border-eco-50 flex flex-col items-center text-center animate-slide-up" style="animation-delay: 0.5s; opacity: 0;">
+                <div class="icon-wrapper w-24 h-24 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 text-4xl mb-6 transition-all duration-300 shadow-inner">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Gerenciar e Cadastrar</h2>
+                <p class="text-gray-500 mb-8 leading-relaxed">
+                    Acesse o painel restrito para criar novas categorias de compras, atualizar a fundamentação legal e editar os critérios das regras existentes.
+                </p>
+                <div class="mt-auto">
+                    <span class="inline-flex items-center gap-2 font-bold text-blue-600 uppercase tracking-wider text-sm group-hover:text-blue-700">
+                        Acessar Painel <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
